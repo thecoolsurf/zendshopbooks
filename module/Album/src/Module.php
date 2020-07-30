@@ -6,6 +6,8 @@ use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Album\Model\Album;
+use Album\Model\AlbumTable;
 
 class Module implements ConfigProviderInterface
 {
@@ -15,20 +17,26 @@ class Module implements ConfigProviderInterface
         return include __DIR__ . '/../config/module.config.php';
     }
     
-//    public function getServiceConfig()
-//    {
-//    }
-
     public function getControllerConfig()
+    {
+    }
+
+    public function getServiceConfig()
     {
         return [
             'factories' => [
-                Controller\AlbumController::class => function($container) {
-                    return new Controller\AlbumController(
-                        $container->get(Model\AlbumTable::class)
-                    );
+                AlbumTable::class => function($container) {
+                    $tableGateway = $container->get(TableGateway::class);
+                    return new AlbumTable($tableGateway);
+                },
+                TableGateway::class => function ($container) {
+                    $dbAdapter = $container->get(AdapterInterface::class);
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new Album());
+                    return new TableGateway('album', $dbAdapter, null, $resultSetPrototype);
                 },
             ],
         ];
     }
+
 }

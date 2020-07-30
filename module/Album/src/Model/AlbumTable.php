@@ -49,10 +49,9 @@ class AlbumTable
         try {
             $this->getAlbum($id);
         } catch (RuntimeException $e) {
-            throw new RuntimeException(sprintf(
-                'Cannot update album with identifier %d; does not exist',
-                $id
-            ));
+            throw new RuntimeException(
+                sprintf('Cannot update album with identifier %d; does not exist',$id)
+            );
         }
         $this->tableGateway->update($data, ['id' => $id]);
     }
