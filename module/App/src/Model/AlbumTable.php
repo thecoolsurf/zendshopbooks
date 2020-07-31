@@ -1,7 +1,7 @@
 <?php
-// Album/src/Model/AlbumTable.php
+// module/App/src/Model/AlbumTable.php
 
-namespace Album\Model;
+namespace App\Model;
 
 use RuntimeException;
 use Zend\Db\TableGateway\TableGatewayInterface;

@@ -1,13 +1,14 @@
 <?php
+// module/App/src/Module.php
 
-namespace Album;
+namespace App;
 
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use Album\Model\Album;
-use Album\Model\AlbumTable;
+use App\Model\Album;
+use App\Model\AlbumTable;
 
 class Module implements ConfigProviderInterface
 {

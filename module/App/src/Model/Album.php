@@ -1,7 +1,7 @@
 <?php
-// Album/src/Model/Album.php
+// module/App/src/Model/Album.php
 
-namespace Album\Model;
+namespace App\Model;
 
 class Album
 {

@@ -1,7 +1,7 @@
 <?php
-// Application/src/Controller/HomeController.php
+// module/App/src/Controller/HomeController.php
 
-namespace Application\Controller;
+namespace App\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;

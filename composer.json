@@ -28,13 +28,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Application\\": "module/Application/src/",
-            "Album\\": "module/Album/src/"
+            "App\\": "module/App/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ApplicationTest\\": "module/Application/test/"
+            "ApplicationTest\\": "module/Application/test/",
+            "AppTest\\": "module/App/test/"
         }
     },
     "scripts": {

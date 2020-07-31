@@ -1,9 +1,9 @@
 <?php
-//Album/src/Controller/AlbumController.php
+//module/App/src/Controller/AlbumController.php
 
-namespace Album\Controller;
+namespace App\Controller;
 
-use Album\Model\AlbumTable;
+use App\Model\AlbumTable;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -12,15 +12,16 @@ class AlbumController extends AbstractActionController
     
     private $table;
 
-    public function __construct(AlbumTable $table)
+    public function __construct()
     {
-        $this->table = $table;
+        $this->table = [];
     }
 
     public function indexAction()
     {
         return new ViewModel([
-            'albums' => $this->table->fetchAll(),
+//            'albums' => $this->table->fetchAll(),
+            'albums' => [],
         ]);
     }
 
