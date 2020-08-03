@@ -14,7 +14,7 @@ return [
                 'options' => [
                     'route'    => '/',
                     'defaults' => [
-                        'controller' => Controller\HomeController::class,
+                        'controller' => Controller\Publics\HomeController::class,
                         'action'     => 'index',
                     ],
                 ],
@@ -28,7 +28,7 @@ return [
                         'id'         => '[0-9]+',
                     ],
                     'defaults' => [
-                        'controller' => Controller\AlbumController::class,
+                        'controller' => Controller\Publics\AlbumController::class,
                         'action'     => 'index',
                     ],
                 ],
@@ -37,8 +37,8 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            Controller\HomeController::class => InvokableFactory::class,
-            Controller\AlbumController::class => InvokableFactory::class,
+            Controller\Publics\HomeController::class => InvokableFactory::class,
+            Controller\Publics\AlbumController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
@@ -50,7 +50,7 @@ return [
             'album/index'           => __DIR__ . '/../view/album/index.phtml',
         ],
         'template_path_stack' => [
-            'album'                 => __DIR__ . '/../view',
+            'albums'                 => __DIR__ . '/../view',
         ],
     ],
 ];

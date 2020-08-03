@@ -15,16 +15,19 @@ $this->headTitle($title);
             <th>Title</th>
             <th>Artist</th>
             <th>&nbsp;</th>
+            <th>&nbsp;</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($albums as $album) : ?>
             <tr>
-                <td><?= $this->escapeHtml($album->title) ?></td>
-                <td><?= $this->escapeHtml($album->artist) ?></td>
+                <td><?= $this->escapeHtml($album['title']) ?></td>
+                <td><?= $this->escapeHtml($album['album']) ?></td>
                 <td>
-                    <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>">Edit</a>
-                    <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>">Delete</a>
+                    <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album['id']]) ?>"><span class="fa fa-pencil"></span></a>
+                </td>
+                <td>
+                    <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album['id']]) ?>"><span class="fa fa-trash"></span></a>
                 </td>
             </tr>
         <?php endforeach; ?>
