@@ -4,14 +4,15 @@
 $title = 'My albums';
 $this->headTitle($title);
 ?>
-<h1><?= $this->escapeHtml($title) ?></h1>
+<h1><?php $this->escapeHtml($title);?></h1>
 <p>
-    <a href="<?= $this->url('album', ['action' => 'add']) ?>">Add new album</a>
+    <a href="<?php $this->url('album', ['action' => 'add']);?>">Add new album</a>
 </p>
 
 <table class="table">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Title</th>
             <th>Artist</th>
             <th>&nbsp;</th>
@@ -19,18 +20,22 @@ $this->headTitle($title);
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($albums as $album) : ?>
+        <?php foreach ($albums as $album):?>
+            <?php $id = $album->getId();?>
+            <?php $title = $album->getTitle();?>
+            <?php $artist = $album->getArtist();?>
             <tr>
-                <td><?= $this->escapeHtml($album['title']) ?></td>
-                <td><?= $this->escapeHtml($album['album']) ?></td>
-                <td>
-                    <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album['id']]) ?>"><span class="fa fa-pencil"></span></a>
+                <td width="80"><?php echo $this->escapeHtml($id);?></td>
+                <td><?php echo $this->escapeHtml($title);?></td>
+                <td><?php echo $this->escapeHtml($artist);?></td>
+                <td width="50">
+                    <a href="<?php echo $this->url('album', ['action'=>'edit', 'id'=>$id]);?>"><span class="fa fa-pencil"></span></a>
                 </td>
-                <td>
-                    <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album['id']]) ?>"><span class="fa fa-trash"></span></a>
+                <td width="50">
+                    <a href="<?php echo $this->url('album', ['action'=>'delete', 'id'=>$id]);?>"><span class="fa fa-trash"></span></a>
                 </td>
             </tr>
-        <?php endforeach; ?>
+        <?php endforeach;?>
     </tbody>
 </table>
 

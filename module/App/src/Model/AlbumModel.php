@@ -12,27 +12,27 @@ class AlbumModel
         1 => [
             'id'    => 10,
             'title' => 'Hello World #1',
-            'album'  => 'This is our first blog post!',
+            'artist'  => 'This is our first blog post!',
         ],
         2 => [
             'id'    => 20,
             'title' => 'Hello World #2',
-            'album'  => 'This is our second blog post!',
+            'artist'  => 'This is our second blog post!',
         ],
         3 => [
             'id'    => 30,
             'title' => 'Hello World #3',
-            'album'  => 'This is our third blog post!',
+            'artist'  => 'This is our third blog post!',
         ],
         4 => [
             'id'    => 40,
             'title' => 'Hello World #4',
-            'album'  => 'This is our fourth blog post!',
+            'artist'  => 'This is our fourth blog post!',
         ],
         5 => [
             'id'    => 50,
             'title' => 'Hello World #5',
-            'album'  => 'This is our fifth blog post!',
+            'artist'  => 'This is our fifth blog post!',
         ],
     ];
 
@@ -76,9 +76,9 @@ class AlbumModel
      */
     public function findAll()
     {
-//        $datas = $this->populateEntities($this->data);
-//        return $datas;
-        return $this->data;
+        $datas = $this->populateEntities($this->data);
+        return $datas;
+//        return $this->data;
     }
 
 

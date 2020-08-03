@@ -13,9 +13,6 @@ class AlbumController extends AbstractActionController
     public function indexAction()
     {
         $albums = new AlbumModel();
-//        echo '<pre>';
-//        var_dump($albums);
-//        echo '</pre>';
         return new ViewModel([
             'albums' => $albums->findAll(),
         ]);
