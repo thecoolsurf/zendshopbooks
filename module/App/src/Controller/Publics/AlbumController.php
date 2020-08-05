@@ -6,6 +6,7 @@ namespace App\Controller\Publics;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use App\Repository\AlbumRepository;
+use App\Model\ZendDbSqlRepository;
 
 class AlbumController extends AbstractActionController
 {

@@ -43,6 +43,7 @@ return [
     ],
     'controllers' => [
         'factories' => [
+            Model\ZendDbSqlRepository::class => Factory\ZendDbSqlRepositoryFactory::class,
             Controller\Publics\HomeController::class => InvokableFactory::class,
             Controller\Publics\AlbumController::class => InvokableFactory::class,
         ],
