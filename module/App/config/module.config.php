@@ -7,6 +7,12 @@ use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
+    'db' => [
+        'driver'   => 'Pdo',
+        'database' => 'blog',
+        'username' => 'root',
+        'password' => 'mysql'
+    ],
     'router' => [
         'routes' => [
             'home' => [
@@ -43,14 +49,14 @@ return [
     ],
     'view_manager' => [
         'template_map' => [
-            'layout/index'          => __DIR__ . '/../view/layout/index.phtml',
-            'home/index'            => __DIR__ . '/../view/home/index.phtml',
-            'error/404'             => __DIR__ . '/../view/error/404.phtml',
-            'error/index'           => __DIR__ . '/../view/error/index.phtml',
-            'album/index'           => __DIR__ . '/../view/album/index.phtml',
+            'layout/index' => __DIR__ . '/../view/layout/index.phtml',
+            'home/index' => __DIR__ . '/../view/home/index.phtml',
+            'error/404' => __DIR__ . '/../view/error/404.phtml',
+            'error/index' => __DIR__ . '/../view/error/index.phtml',
+            'album/index' => __DIR__ . '/../view/album/index.phtml',
         ],
         'template_path_stack' => [
-            'albums'                 => __DIR__ . '/../view',
+            'app' => __DIR__ . '/../view',
         ],
     ],
 ];

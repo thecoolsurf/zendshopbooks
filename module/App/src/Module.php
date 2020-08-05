@@ -26,6 +26,11 @@ class Module implements ConfigProviderInterface
     {
         return [
             'factories' => [
+                'Zend\Db\Adapter\Adapter' => function ($sm) {
+                     $config = $sm->get('Config');
+                     return new \Zend\Db\Adapter\Adapter($config['db']);
+
+                },                
                 AlbumTable::class => function($container) {
                     $tableGateway = $container->get(TableGateway::class);
                     return new AlbumTable($tableGateway);

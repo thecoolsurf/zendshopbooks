@@ -1,11 +1,11 @@
 <?php
 // module/App/src/Model/AlbumModel.php
 
-namespace App\Model;
+namespace App\Repository;
 
 use App\Entity\Album;
 
-class AlbumModel
+class AlbumRepository
 {
     
     private $data = [

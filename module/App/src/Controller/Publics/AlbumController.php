@@ -5,14 +5,23 @@ namespace App\Controller\Publics;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use App\Model\AlbumModel;
+use App\Repository\AlbumRepository;
 
 class AlbumController extends AbstractActionController
 {
 
+     public function getAlbumTable()
+     {
+         if (!$this->albumTable) {
+             $sm = $this->getServiceLocator();
+             $this->albumTable = $sm->get('Album\Model\AlbumTable');
+         }
+         return $this->albumTable;
+     }
+     
     public function indexAction()
     {
-        $albums = new AlbumModel();
+        $albums = new AlbumRepository();
         return new ViewModel([
             'albums' => $albums->findAll(),
         ]);

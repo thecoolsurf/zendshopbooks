@@ -30,7 +30,5 @@ return [
     'Zend\Router',
     'Zend\Validator',
     'ZendDeveloperTools',
-//    'Application',
-//    'Album',
     'App',
 ];

@@ -1,12 +1,12 @@
-<?= $this->doctype() ?>
+<?= $this->doctype();?>
 <html lang="en">
-    <?= require __DIR__.'/../include/public/head.phtml'; ?>
+    <?php require __DIR__.'/../include/public/head.phtml'; ?>
     <body>
         <div class="container">
-            <?= include __DIR__.'/../include/public/navigation.phtml'; ?>
-            <?= include __DIR__.'/../include/public/header.phtml'; ?>
+            <?php include __DIR__.'/../include/public/navigation.phtml'; ?>
+            <?php include __DIR__.'/../include/public/header.phtml'; ?>
             <?= $this->content ?>
-            <?= include __DIR__.'/../include/public/footer.phtml'; ?>
+            <?php include __DIR__.'/../include/public/footer.phtml'; ?>
         </div>
         <?= $this->inlineScript() ?>
     </body>
