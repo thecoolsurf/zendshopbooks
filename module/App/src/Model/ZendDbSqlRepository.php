@@ -39,7 +39,7 @@ class ZendDbSqlRepository implements PostRepositoryInterface
      * Each entry should be a Post instance.
      * @return Post[]
      */
-    public function findAllPosts()
+    public function findAll()
     {
         $sql       = new Sql($this->db);
         $select    = $sql->select('album');
@@ -61,7 +61,7 @@ class ZendDbSqlRepository implements PostRepositoryInterface
      * @param  int $id Identifier of the post to return.
      * @return Post
      */
-    public function findPost($id)
+    public function findById($id)
     {
         $sql       = new Sql($this->db);
         $select    = $sql->select('posts');

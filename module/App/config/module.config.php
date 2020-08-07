@@ -59,5 +59,8 @@ return [
         'template_path_stack' => [
             'app' => __DIR__ . '/../view',
         ],
+        'default_template_suffix' => 'phtml',
+        'display_exceptions' => false,
+        'exception_template' => 'error/index',
     ],
 ];
