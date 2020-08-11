@@ -35,7 +35,7 @@ return [
                     ],
                     'defaults' => [
                         'controller' => Controller\Publics\AlbumController::class,
-                        'action'     => 'index',
+                        'action'     => 'listing',
                     ],
                 ],
             ],
@@ -43,7 +43,6 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            Model\ZendDbSqlRepository::class => Factory\ZendDbSqlRepositoryFactory::class,
             Controller\Publics\HomeController::class => InvokableFactory::class,
             Controller\Publics\AlbumController::class => InvokableFactory::class,
         ],
@@ -54,7 +53,7 @@ return [
             'home/index' => __DIR__ . '/../view/home/index.phtml',
             'error/404' => __DIR__ . '/../view/error/404.phtml',
             'error/index' => __DIR__ . '/../view/error/index.phtml',
-            'album/index' => __DIR__ . '/../view/album/index.phtml',
+            'album/listing' => __DIR__ . '/../view/album/listing.phtml',
         ],
         'template_path_stack' => [
             'app' => __DIR__ . '/../view',

@@ -24,4 +24,17 @@ class AlbumRepository
         endif;
     }
     
+    public function findById()
+    {
+        $adapter  = new AdapterSetup();
+        $pdo      = $adapter->getMySQL();
+        $select   = $pdo->select('album')->where(['id' => 1]);
+        $stmt     = $pdo->prepareStatementForSqlObject($select);
+        $rows     = $stmt->execute();
+        if ($rows instanceof ResultInterface || $rows->isQueryResult()):
+            return $rows;
+        else:
+            return;
+        endif;
+    }
 }

@@ -1,0 +1,14 @@
+<?php
+// module/Album/view/album/album/index.phtml:
+
+$title = 'Edit album';
+$this->headTitle($title);
+?>
+<div class="row">
+    <h1><?php $this->escapeHtml($title); ?></h1>
+    <p><a href="<?php $this->url('album', ['action' => 'add']); ?>">Add new album</a></p>
+</div>
+<div class="row">
+    <?php var_dump($form);?>
+</div>
+
